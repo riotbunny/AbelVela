@@ -1,725 +1,513 @@
-
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abel Vela | Whitestone Senior Protection Specialist</title>
-    <meta name="description" content="Direct personal senior final expense protection with licensed independent broker Abel Vela (NPN 21552059). Lock in your rates for life with zero medical exams.">
-    
-    <!-- Google Fonts: Bebas Neue (Condensed Display), Plus Jakarta Sans (Humanist Body), JetBrains Mono (Technical Meta) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        canvas: '#0b131e',
-                        surface: '#121d2b',
-                        'surface-raised': '#1a283a',
-                        'paper-bg': '#f8f6f0',
-                        'paper-surface': '#ffffff',
-                        accent: {
-                            DEFAULT: '#f59e0b', // Warm Gold
-                            hover: '#d97706',
-                            glow: 'rgba(245, 158, 11, 0.4)'
-                        }
-                    },
-                    fontFamily: {
-                        display: ['"Bebas Neue"', 'sans-serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --canvas: #0b131e;
-            --surface: #121d2b;
-            --surface-raised: #1a283a;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-tertiary: #64748b;
-            --line-subtle: rgba(248, 250, 252, 0.12);
-            --line-strong: rgba(248, 250, 252, 0.25);
-            --accent: #f59e0b;
-            --accent-rest: rgba(245, 158, 11, 0.08);
-            --accent-hover: rgba(245, 158, 11, 0.18);
-            --accent-glow: rgba(245, 158, 11, 0.35);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abel Vela | Whitestone Senior Protection Specialist</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        body {
-            background-color: var(--canvas);
-            color: var(--text-primary);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+  <!-- Google Fonts: Bebas Neue (Condensed Display), Plus Jakarta Sans (Humanist Body), JetBrains Mono (Technical Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:ital,wght@0,400;0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-        /* Rafa Grid System */
-        .site-shell-grid {
-            background-image: 
-                linear-gradient(rgba(248, 250, 252, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(248, 250, 252, 0.03) 1px, transparent 1px);
-            background-size: 64px 64px;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            canvas: '#080a0f',
+            'canvas-soft': '#0e121a',
+            surface: '#141a24',
+            'surface-raised': '#1c2433',
+            paper: '#f8fafc',
+            'paper-dark': '#0f172a',
+            accent: '#f59e0b', // Senior-friendly warm gold / amber
+            'accent-hover': '#d97706',
+            'accent-glow': 'rgba(245, 158, 11, 0.35)'
+          },
+          fontFamily: {
+            display: ['"Bebas Neue"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
         }
+      }
+    }
+  </script>
 
-        .technical-grid {
-            background-image: 
-                linear-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(245, 158, 11, 0.06) 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
+  <style>
+    /* Technical Grid Canvas Pattern (Rafa Framework) */
+    .site-shell-grid {
+      background-color: #080a0f;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
 
-        /* Top Scroll Progress Line */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--accent);
-            box-shadow: 0 0 16px var(--accent-glow);
-            z-index: 100;
-            width: 0%;
-            transition: width 0.1s ease-out;
-        }
+    .technical-grid {
+      background-image: 
+        linear-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
 
-        /* Rotating Outcome Window */
-        .outcome-window {
-            position: relative;
-            display: inline-block;
-            height: 1.1em;
-            overflow: hidden;
-            vertical-align: bottom;
-            color: var(--accent);
-        }
+    /* Animated Underline */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #f59e0b;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 250ms ease-in-out;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
 
-        .outcome-text {
-            display: block;
-            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
-        }
-
-        /* Viewport Reveal Animations */
-        .reveal-node {
-            opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .reveal-node.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b131e;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
-        }
-    </style>
+    /* Custom Scrollbar for iframe modal */
+    .custom-scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #0e121a;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #2d3748;
+      border-radius: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+  </style>
 </head>
-<body class="site-shell-grid antialiased selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- Top Scroll Progress Indicator -->
-    <div id="scroll-progress" aria-hidden="true"></div>
+<body class="site-shell-grid text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-black">
 
-    <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0b131e]/90 backdrop-blur-md border-b border-white/10 h-20 transition-all duration-300">
-        <div class="max-w-[1400px] mx-auto h-full px-4 sm:px-6 lg:px-10 flex items-center justify-between">
-            
-            <!-- Brand & Agent Badge -->
-            <a href="#" class="flex items-center gap-3.5 group">
-                <img src="ChatGPT Image Jul 11, 2026, 02_32_00 AM.png" alt="Whitestone Logo" class="h-11 w-auto object-contain rounded-full bg-white/5 p-1 border border-white/10 group-hover:border-amber-500/50 transition-colors" onerror="this.onerror=null; this.src='logo.png';">
-                <div>
-                    <div class="flex items-center gap-2">
-                        <span class="font-display text-2xl tracking-wider text-white uppercase leading-none">WHITESTONE</span>
-                        <span class="hidden sm:inline-block font-mono text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30 uppercase">AGENT DIRECT</span>
-                    </div>
-                    <span class="block font-mono text-xs text-slate-400 tracking-wider">ABEL VELA &bull; NPN #21552059</span>
-                </div>
-            </a>
+  <!-- 1. TOP SCROLL PROGRESS BAR (Rafa Framework 6.2) -->
+  <div id="scroll-progress" class="fixed top-0 left-0 right-0 h-[3px] bg-amber-500 z-[100] shadow-[0_0_12px_rgba(245,158,11,0.8)] transition-all duration-75 origin-left scale-x-0"></div>
 
-            <!-- Quick Contact & Primary Action -->
-            <div class="flex items-center gap-3 sm:gap-6">
-                <a href="tel:18889109928" class="hidden md:flex items-center gap-2.5 font-mono text-xs text-slate-300 hover:text-amber-400 transition-colors px-3 py-2 rounded-lg bg-white/5 border border-white/10">
-                    <i class="fa-solid fa-phone text-amber-400 text-xs"></i>
-                    <span>1-888-910-9928</span>
-                </a>
-
-                <button onclick="openBookingModal()" class="relative group px-5 py-2.5 rounded-lg border border-amber-500 text-amber-400 font-semibold text-sm transition-all duration-200 hover:bg-amber-500/15 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                    <span>Schedule Call</span>
-                    <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
-                </button>
-            </div>
+  <!-- 2. TRANSLUCENT HEADER (Rafa Framework 6.1) -->
+  <header class="fixed top-0 left-0 right-0 z-40 bg-[#080a0f]/90 backdrop-blur-md border-b border-white/10 h-[76px] transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+      
+      <!-- Brand & Agent Badge -->
+      <a href="#" class="flex items-center space-x-3 group">
+        <img src="ChatGPT Image Jul 11, 2026, 02_32_00 AM.png" alt="Whitestone Logo" class="h-10 w-auto rounded-full border border-amber-500/30 group-hover:border-amber-400 transition-colors">
+        <div class="flex flex-col">
+          <span class="font-display text-2xl tracking-wider text-white group-hover:text-amber-400 transition-colors leading-none">WHITESTONE</span>
+          <span class="font-mono text-[10px] text-amber-400/90 tracking-widest uppercase">Specialist: Abel Vela</span>
         </div>
-    </header>
+      </a>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                
-                <!-- Left Hero Editorial Content -->
-                <div class="lg:col-span-7 space-y-8 reveal-node">
-                    
-                    <!-- System Eyebrow -->
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-amber-500/10 border border-amber-500/30 font-mono text-xs text-amber-400 tracking-widest uppercase">
-                        <i class="fa-solid fa-shield-halved text-amber-400"></i>
-                        <span>01 // DIRECT PERSONAL SENIOR ADVOCATE</span>
-                    </div>
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8 font-mono text-xs tracking-widest uppercase text-slate-300">
+        <a href="#about-abel" class="nav-link hover:text-white transition-colors">Meet Abel</a>
+        <a href="#system" class="nav-link hover:text-white transition-colors">30+ Carriers</a>
+        <a href="#comparison" class="nav-link hover:text-white transition-colors">Broker vs Agent</a>
+        <a href="#faq" class="nav-link hover:text-white transition-colors">FAQ</a>
+      </nav>
 
-                    <!-- Main Editorial Headline -->
-                    <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.92] text-white uppercase">
-                        I PROTECT SENIORS FROM FINANCIAL BURDEN WITH GUARANTEED 
-                        <span class="outcome-window ml-2">
-                            <span id="outcome-target" class="outcome-text">LIFETIME RATES.</span>
-                        </span>
-                    </h1>
+      <!-- Action Buttons -->
+      <div class="flex items-center space-x-3">
+        <a href="tel:18889109928" class="hidden sm:inline-flex items-center space-x-2 px-3 py-2 rounded-lg border border-white/15 bg-surface text-xs font-mono text-slate-200 hover:border-amber-500/50 hover:text-amber-400 transition-all">
+          <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span>1-888-910-9928</span>
+        </a>
 
-                    <!-- Human-centered lead paragraph -->
-                    <p class="text-lg sm:text-xl text-slate-300 font-normal leading-relaxed max-w-2xl">
-                        Hi, I’m <strong>Abel Vela</strong>. Buying final expense coverage shouldn't mean dealing with pushy call centers or automated bots. As your personal independent agent, I shop over <strong>30 top-rated carriers</strong> to give your family 100% peace of mind.
-                    </p>
+        <button onclick="openBookingModal()" class="px-4 py-2.5 rounded-lg border border-amber-500 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 hover:text-white font-mono text-xs font-bold tracking-wider uppercase transition-all shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+          Schedule Call
+        </button>
+      </div>
 
-                    <!-- Key Technical Metadata Badges -->
-                    <div class="grid sm:grid-cols-3 gap-3 pt-2 font-mono text-xs text-slate-300">
-                        <div class="p-3 rounded-lg bg-slate-900/80 border border-white/10 flex items-center gap-2.5">
-                            <i class="fa-solid fa-check text-amber-400 text-sm"></i>
-                            <span>NO MEDICAL EXAMS</span>
-                        </div>
-                        <div class="p-3 rounded-lg bg-slate-900/80 border border-white/10 flex items-center gap-2.5">
-                            <i class="fa-solid fa-check text-amber-400 text-sm"></i>
-                            <span>LOCKED-IN RATES</span>
-                        </div>
-                        <div class="p-3 rounded-lg bg-slate-900/80 border border-white/10 flex items-center gap-2.5">
-                            <i class="fa-solid fa-check text-amber-400 text-sm"></i>
-                            <span>30+ CARRIERS SHOPPED</span>
-                        </div>
-                    </div>
-
-                    <!-- CTA Actions -->
-                    <div class="pt-4 flex flex-col sm:flex-row gap-4">
-                        <button onclick="openBookingModal()" class="px-8 py-4 rounded-xl border-2 border-amber-500 bg-amber-500/10 text-amber-300 font-bold text-base hover:bg-amber-500 hover:text-slate-950 transition-all duration-300 shadow-[0_0_30px_rgba(245,158,11,0.2)] flex items-center justify-center gap-3 group">
-                            <i class="fa-regular fa-calendar-check text-lg"></i>
-                            <span>Schedule Free Family Protection Call</span>
-                            <i class="fa-solid fa-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-
-                        <a href="tel:18889109928" class="px-6 py-4 rounded-xl border border-white/15 bg-white/5 text-white font-semibold text-base hover:bg-white/10 transition-all flex items-center justify-center gap-2 font-mono">
-                            <i class="fa-solid fa-phone text-amber-400"></i>
-                            <span>1-888-910-9928</span>
-                        </a>
-                    </div>
-
-                    <!-- Trust microcopy -->
-                    <p class="font-mono text-xs text-slate-400 flex items-center gap-2 pt-1">
-                        <i class="fa-solid fa-lock text-emerald-400"></i>
-                        <span>100% Free Consultation &bull; Confidential &bull; Licensed National Producer #21552059</span>
-                    </p>
-
-                </div>
-
-                <!-- Right High-Tech Carrier Matching Visual (Rafa System Panel) -->
-                <div class="lg:col-span-5 reveal-node">
-                    <div class="relative rounded-2xl bg-slate-900/90 border border-amber-500/30 p-6 shadow-2xl backdrop-blur-xl technical-grid">
-                        
-                        <!-- Panel Bar Header -->
-                        <div class="flex items-center justify-between pb-4 mb-6 border-b border-white/10">
-                            <div class="flex items-center gap-2 font-mono text-xs text-slate-400">
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                                <span>ABEL VELA // MATCH ENGINE</span>
-                            </div>
-                            <span class="font-mono text-[11px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">30+ CARRIERS LIVE</span>
-                        </div>
-
-                        <!-- System Card 1: Lead Qualification -->
-                        <div class="mb-4 p-4 rounded-xl bg-slate-800/80 border border-white/10 space-y-2">
-                            <div class="flex justify-between items-center text-xs font-mono text-slate-400">
-                                <span>STEP 01</span>
-                                <span class="text-amber-400"><i class="fa-solid fa-shield"></i> CLIENT PROFILE</span>
-                            </div>
-                            <p class="font-bold text-white text-sm">Basic Health & Budget Evaluation</p>
-                            <p class="text-xs text-slate-300">No medical exams or blood work needed. Just simple health questions answered directly with Abel.</p>
-                        </div>
-
-                        <!-- Connector Line -->
-                        <div class="h-6 w-0.5 bg-amber-500/40 mx-auto my-1 border-dashed border-l border-amber-400"></div>
-
-                        <!-- System Card 2: Market Comparison -->
-                        <div class="mb-4 p-4 rounded-xl bg-slate-800/80 border border-amber-500/40 shadow-lg space-y-2">
-                            <div class="flex justify-between items-center text-xs font-mono text-slate-400">
-                                <span>STEP 02</span>
-                                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-bolt"></i> INDEPENDENT BROKER SEARCH</span>
-                            </div>
-                            <p class="font-bold text-amber-400 text-sm">Searching 30+ Top Carriers Nationwide</p>
-                            <div class="flex flex-wrap gap-1.5 pt-1">
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Mutual of Omaha</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Aetna</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">AIG</span>
-                                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">+27 More</span>
-                            </div>
-                        </div>
-
-                        <!-- Connector Line -->
-                        <div class="h-6 w-0.5 bg-amber-500/40 mx-auto my-1 border-dashed border-l border-amber-400"></div>
-
-                        <!-- System Card 3: Guaranteed Result -->
-                        <div class="p-4 rounded-xl bg-amber-500/10 border border-amber-500/50 space-y-2">
-                            <div class="flex justify-between items-center text-xs font-mono text-amber-400">
-                                <span>STEP 03 // OUTCOME</span>
-                                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-circle-check"></i> LOCKED FOR LIFE</span>
-                            </div>
-                            <p class="font-bold text-white text-base">Lowest Rate & Permanent Security</p>
-                            <p class="text-xs text-slate-300">Policy rate never increases. Benefits never decrease. Your family receives immediate payout.</p>
-                        </div>
-
-                        <!-- Quick Call Action in Card -->
-                        <button onclick="openBookingModal()" class="w-full mt-6 py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs uppercase tracking-wider font-mono transition-all flex items-center justify-center gap-2 shadow-lg">
-                            <i class="fa-solid fa-calendar-days"></i>
-                            <span>Schedule Consultation With Abel</span>
-                        </button>
-
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Agent Personal Spotlight Section (Rafa Section 9: Agent Centric Showcase) -->
-    <section class="py-20 lg:py-32 bg-slate-900/60 border-y border-white/10 relative">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-            
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Abel Vela Photo Frame -->
-                <div class="lg:col-span-5 flex justify-center reveal-node">
-                    <div class="relative w-full max-w-md">
-                        <!-- Technical Border Frame -->
-                        <div class="absolute -inset-2 rounded-2xl border border-amber-500/40 bg-amber-500/5 -rotate-1"></div>
-                        
-                        <div class="relative rounded-xl overflow-hidden border border-white/20 bg-slate-950 shadow-2xl">
-                            <img src="Gemini_Generated_Image_th3dr2th3dr2th3d (1).png" alt="Abel Vela - Whitestone Senior Protection Agent" class="w-full h-auto object-cover filter brightness-[0.95] contrast-[1.05]" onerror="this.onerror=null; this.src='abel-vela.png';">
-                            
-                            <!-- Overlay Agent Card Details -->
-                            <div class="p-6 bg-slate-950/90 border-t border-white/10 space-y-2">
-                                <div class="flex items-center justify-between">
-                                    <h3 class="font-display text-3xl text-white uppercase tracking-wide">ABEL VELA</h3>
-                                    <span class="font-mono text-xs text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/30">NPN 21552059</span>
-                                </div>
-                                <p class="font-mono text-xs text-slate-400">Whitestone Senior Protection Specialist &bull; 6+ Years Experience</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Personal Bio & Mission -->
-                <div class="lg:col-span-7 space-y-6 reveal-node">
-                    
-                    <div class="inline-flex items-center gap-2 font-mono text-xs text-amber-400 tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded border border-amber-500/20">
-                        <span>02 // MEET YOUR AGENT</span>
-                    </div>
-
-                    <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-none">
-                        "I DON'T WORK FOR INSURANCE COMPANIES. <span class="text-amber-400">I WORK FOR YOU.</span>"
-                    </h2>
-
-                    <div class="space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed">
-                        <p>
-                            When you call standard life insurance hotlines, you get shuffled between random call center operators who have quotas to meet for a single insurance brand.
-                        </p>
-                        <p>
-                            I built my practice on a totally different principle: <strong>treating every senior like my own family</strong>. For over 6 years, I’ve served as an independent multi-state licensed broker. That means I don’t push one company’s policy—I shop the entire market to find the exact plan that accepts your health conditions at the lowest monthly price.
-                        </p>
-                    </div>
-
-                    <!-- Personal Guarantee Box -->
-                    <div class="p-6 rounded-xl bg-slate-950 border border-amber-500/30 space-y-3">
-                        <div class="flex items-center gap-3 text-amber-400 font-mono text-sm font-bold">
-                            <i class="fa-solid fa-handshake-angle text-lg"></i>
-                            <span>ABEL'S PERSONAL COMMITMENT TO YOU:</span>
-                        </div>
-                        <ul class="space-y-2 font-sans text-sm text-slate-300">
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
-                                <span>No high-pressure sales tactics or hidden fees—ever.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
-                                <span>Direct personal line to reach me whenever you or your family need assistance.</span>
-                            </li>
-                            <li class="flex items-start gap-2.5">
-                                <i class="fa-solid fa-check text-amber-400 mt-1"></i>
-                                <span>Guaranteed rates that stay fixed for life, regardless of health changes.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Direct Action -->
-                    <div class="pt-2">
-                        <button onclick="openBookingModal()" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm uppercase font-mono tracking-wider transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            <span>Schedule A Direct Consultation With Abel</span>
-                        </button>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Rafa Section 11.4: Inverted Light Section ("Warm Paper" for Senior Contrast) -->
-    <section class="py-20 lg:py-32 bg-paper-bg text-slate-900 border-y border-amber-900/20">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal-node">
-                <span class="font-mono text-xs font-bold text-amber-700 tracking-widest uppercase bg-amber-200/60 px-3 py-1 rounded border border-amber-300">03 // WHY INDEPENDENT BROKERAGE MATTERS</span>
-                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-tight text-slate-950 mt-4">
-                    CAPTIVE AGENTS VS. YOUR INDEPENDENT ADVOCATE
-                </h2>
-                <p class="text-slate-700 text-base sm:text-lg mt-3">
-                    See why working directly with Abel Vela guarantees better coverage and lower monthly premiums.
-                </p>
-            </div>
-
-            <!-- Comparison Grid -->
-            <div class="grid md:grid-cols-2 gap-8 reveal-node">
-                
-                <!-- Captive Insurance Agent (Bad Choice) -->
-                <div class="bg-slate-200/60 rounded-2xl p-8 border border-slate-300 space-y-6">
-                    <div class="flex items-center gap-3 pb-4 border-b border-slate-300">
-                        <div class="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-lg">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-display text-2xl text-slate-900 uppercase">Single-Company Captive Agent</h3>
-                            <p class="font-mono text-xs text-slate-600">State Farm, Lincoln Heritage, Farmers, etc.</p>
-                        </div>
-                    </div>
-
-                    <ul class="space-y-4 font-sans text-sm sm:text-base text-slate-700">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"></i>
-                            <span>Forced to push 1 single carrier's strict medical rules.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"></i>
-                            <span>Higher prices if you have diabetes, blood pressure, or past health issues.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-xmark text-red-500 mt-1 flex-shrink-0"></i>
-                            <span>You talk to call center representatives who change constantly.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Abel Vela - Whitestone (Best Choice) -->
-                <div class="bg-paper-surface rounded-2xl p-8 border-2 border-amber-500 shadow-xl space-y-6 relative">
-                    <div class="absolute -top-3.5 right-6 bg-amber-500 text-slate-950 font-mono text-[11px] font-bold px-3 py-1 rounded uppercase tracking-wider">
-                        YOUR BEST CHOICE
-                    </div>
-
-                    <div class="flex items-center gap-3 pb-4 border-b border-slate-200">
-                        <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-display text-2xl text-slate-950 uppercase">Abel Vela (Whitestone)</h3>
-                            <p class="font-mono text-xs text-amber-700 font-bold">Independent Specialist &bull; 30+ Carriers</p>
-                        </div>
-                    </div>
-
-                    <ul class="space-y-4 font-sans text-sm sm:text-base text-slate-800 font-medium">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1 flex-shrink-0"></i>
-                            <span>Shops 30+ top carriers to find the company that accepts your exact health profile.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1 flex-shrink-0"></i>
-                            <span>Locks in the lowest guaranteed lifetime rate available on the market.</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1 flex-shrink-0"></i>
-                            <span>Direct access to Abel Vela as your trusted personal agent.</span>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Embedded Booking Calendar Section -->
-    <section id="booking-section" class="py-20 lg:py-32 bg-canvas relative border-t border-white/10">
-        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-10">
-            
-            <div class="text-center max-w-3xl mx-auto mb-12 reveal-node">
-                <span class="font-mono text-xs text-amber-400 tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded border border-amber-500/30">04 // SELECT A CONVENIENT TIME</span>
-                <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl text-white uppercase tracking-tight mt-3">
-                    SCHEDULE YOUR FREE FAMILY PROTECTION CALL
-                </h2>
-                <p class="text-slate-400 text-base sm:text-lg mt-2">
-                    Pick a date and time on Abel's calendar below for a relaxed, no-obligation conversation.
-                </p>
-            </div>
-
-            <!-- Booking Widget Box -->
-            <div class="bg-slate-900 rounded-2xl border border-white/15 p-2 sm:p-6 shadow-2xl reveal-node">
-                <iframe 
-                    src="https://link.uigus.com/widget/bookings/family-protection-call" 
-                    style="width: 100%; border:none; min-height: 780px;" 
-                    scrolling="auto" 
-                    id="booking-iframe"
-                    title="Abel Vela Calendar Schedule">
-                </iframe>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Frequently Asked Questions -->
-    <section class="py-20 lg:py-32 bg-slate-900/40 border-t border-white/10">
-        <div class="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-10">
-            
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal-node">
-                <span class="font-mono text-xs text-amber-400 tracking-widest uppercase bg-amber-500/10 px-3 py-1 rounded border border-amber-500/30">05 // FREQUENTLY ASKED QUESTIONS</span>
-                <h2 class="font-display text-4xl sm:text-5xl text-white uppercase tracking-tight mt-3">
-                    CLEAR ANSWERS FOR SENIORS & FAMILIES
-                </h2>
-            </div>
-
-            <div class="space-y-4 reveal-node">
-                
-                <!-- FAQ Item 1 -->
-                <div class="border border-white/10 rounded-xl bg-slate-900 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 text-white font-bold text-lg hover:text-amber-400 transition-colors">
-                        <span>Will my monthly premium ever increase as I age?</span>
-                        <i class="fa-solid fa-plus text-amber-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-slate-300 text-base hidden leading-relaxed border-t border-white/5 pt-4">
-                        Never. Every final expense whole life policy Abel recommends locks in your monthly rate permanently on day one. It will never go up regardless of age or changes in health.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="border border-white/10 rounded-xl bg-slate-900 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 text-white font-bold text-lg hover:text-amber-400 transition-colors">
-                        <span>Are medical exams or blood tests required?</span>
-                        <i class="fa-solid fa-plus text-amber-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-slate-300 text-base hidden leading-relaxed border-t border-white/5 pt-4">
-                        No medical exams or blood draws are required. Approval is based on answering simple medical history questions during a quick phone call with Abel.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="border border-white/10 rounded-xl bg-slate-900 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 text-white font-bold text-lg hover:text-amber-400 transition-colors">
-                        <span>What if I have pre-existing health conditions?</span>
-                        <i class="fa-solid fa-plus text-amber-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-slate-300 text-base hidden leading-relaxed border-t border-white/5 pt-4">
-                        Because Abel represents over 30 top insurance carriers, he matches your specific health condition (such as diabetes, high blood pressure, or heart conditions) with the carrier that offers you the most favorable rates.
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="border border-white/10 rounded-xl bg-slate-900 overflow-hidden">
-                    <button onclick="toggleFaq(this)" class="w-full p-6 text-left flex justify-between items-center gap-4 text-white font-bold text-lg hover:text-amber-400 transition-colors">
-                        <span>How quickly does the benefit payout to my beneficiaries?</span>
-                        <i class="fa-solid fa-plus text-amber-400 transition-transform duration-300"></i>
-                    </button>
-                    <div class="px-6 pb-6 text-slate-300 text-base hidden leading-relaxed border-t border-white/5 pt-4">
-                        Final expense benefits are designed to pay out tax-free within 24 to 48 hours of claim processing, so your loved ones can immediately cover funeral, burial, or medical costs without taking out loans.
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-white/10">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
-            <div class="grid md:grid-cols-12 gap-8 pb-12 border-b border-white/10">
-                
-                <div class="md:col-span-6 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <img src="ChatGPT Image Jul 11, 2026, 02_32_00 AM.png" alt="Whitestone Logo" class="h-10 w-auto rounded-full bg-white/10 p-1" onerror="this.onerror=null; this.src='logo.png';">
-                        <div>
-                            <span class="font-display text-2xl text-white tracking-wider block leading-none">WHITESTONE</span>
-                            <span class="font-mono text-xs text-amber-400">SENIOR PROTECTION</span>
-                        </div>
-                    </div>
-                    <p class="text-sm text-slate-400 max-w-md leading-relaxed">
-                        Dedicated personal protection provided by independent licensed broker Abel Vela. Helping seniors protect their legacy with guaranteed lifetime coverage.
-                    </p>
-                </div>
-
-                <div class="md:col-span-3 space-y-2 font-mono text-xs text-slate-300">
-                    <h4 class="font-bold text-white uppercase text-sm mb-3">AGENT CREDENTIALS</h4>
-                    <p><strong class="text-amber-400">Agent Name:</strong> Abel Vela</p>
-                    <p><strong class="text-amber-400">National Producer #:</strong> 21552059</p>
-                    <p><strong class="text-amber-400">Status:</strong> Multi-State Approved Independent Broker</p>
-                    <p><strong class="text-amber-400">Experience:</strong> 6+ Years Dedicated Senior Advocacy</p>
-                </div>
-
-                <div class="md:col-span-3 space-y-3 font-mono text-xs">
-                    <h4 class="font-bold text-white uppercase text-sm mb-3">DIRECT CONTACT</h4>
-                    <a href="tel:18889109928" class="text-amber-400 font-bold text-base block hover:underline">
-                        <i class="fa-solid fa-phone mr-1"></i> 1-888-910-9928
-                    </a>
-                    <button onclick="openBookingModal()" class="w-full py-2.5 px-4 rounded bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 uppercase text-xs font-bold transition-all">
-                        Schedule Call
-                    </button>
-                </div>
-
-            </div>
-
-            <div class="pt-8 text-center font-mono text-xs text-slate-500 space-y-2">
-                <p>Disclaimer: Whitestone Senior Protection & Abel Vela function as an independent agency. Products are underwritten by third-party carriers.</p>
-                <p>&copy; <span id="year"></span> Whitestone Senior Protection. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Booking Lightbox Modal (Rafa Framework Interactive Layer) -->
-    <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
-        <div class="bg-slate-900 rounded-2xl w-full max-w-3xl overflow-hidden border border-amber-500/40 shadow-2xl relative max-h-[92vh] flex flex-col">
-            
-            <!-- Modal Top Header -->
-            <div class="bg-slate-950 px-6 py-4 flex justify-between items-center border-b border-white/10">
-                <div class="flex items-center gap-2 font-mono text-xs text-amber-400 uppercase">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span>SCHEDULE DIRECTLY WITH ABEL VELA</span>
-                </div>
-                <button onclick="closeBookingModal()" class="text-slate-400 hover:text-white text-2xl font-bold transition-colors focus:outline-none">&times;</button>
-            </div>
-            
-            <!-- Modal Body (Iframe) -->
-            <div class="p-2 sm:p-4 overflow-y-auto flex-1 bg-slate-900 h-[75vh]">
-                <iframe 
-                    src="https://link.uigus.com/widget/bookings/family-protection-call" 
-                    style="width: 100%; height: 100%; border:none; min-height: 720px;" 
-                    scrolling="auto"
-                    title="Abel Vela Modal Calendar">
-                </iframe>
-            </div>
-        </div>
     </div>
+  </header>
 
-    <!-- Client Scripts -->
-    <script>
-        // Set dynamic current year in footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+  <main class="pt-[76px]">
 
-        // 1. Top Scroll Progress Line
-        window.addEventListener('scroll', () => {
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById('scroll-progress').style.width = scrolled + '%';
-        });
+    <!-- 3. HERO SECTION (Rafa Framework Section 7) -->
+    <section class="relative min-h-[90vh] flex items-center justify-center py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Editorial Headline & Copy -->
+        <div class="lg:col-span-7 space-y-8">
+          
+          <!-- Eyebrow (Rafa 4.3) -->
+          <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 font-mono text-xs text-amber-400 uppercase tracking-widest">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            <span>Independent Senior Protection Specialist</span>
+          </div>
 
-        // 2. Rotating Hero Phrase (Rafa Outcome Rotator)
-        const outcomes = [
-            "LIFETIME RATES.",
-            "BURIAL COSTS.",
-            "MEDICAL BILLS.",
-            "PEACE OF MIND."
-        ];
-        let outcomeIdx = 0;
-        const outcomeTarget = document.getElementById('outcome-target');
+          <!-- Large Display Heading with Rotating Outcome (Rafa 7.2) -->
+          <h1 class="font-display text-5xl sm:text-7xl lg:text-8xl tracking-tight text-white leading-[0.92] uppercase">
+            PROTECT YOUR FAMILY FROM UNEXPECTED <br>
+            <span class="relative block h-[1.1em] overflow-hidden text-amber-400 mt-1">
+              <span id="rotating-phrase" class="absolute inset-0 transition-all duration-500 transform translate-y-0 opacity-100">
+                BURIAL COSTS
+              </span>
+            </span>
+          </h1>
 
-        setInterval(() => {
-            outcomeTarget.style.opacity = '0';
-            outcomeTarget.style.transform = 'translateY(-20px)';
+          <!-- Lead Paragraph (Rafa 4.2) -->
+          <p class="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
+            Hi, I’m <strong class="text-white font-semibold">Abel Vela</strong>. As an independent licensed specialist with <strong class="text-amber-400 font-semibold">6+ years of experience</strong>, I advocate for seniors—matching you with over 30 top-rated carriers for lifelong peace of mind.
+          </p>
+
+          <!-- Key Trust Badges -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2 font-mono text-xs text-slate-300">
+            <div class="flex items-center space-x-3 p-3 rounded-xl bg-surface border border-white/10">
+              <svg class="w-5 h-5 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>No Medical Exams Needed</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 rounded-xl bg-surface border border-white/10">
+              <svg class="w-5 h-5 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              <span>Rates Locked For Life</span>
+            </div>
+            <div class="flex items-center space-x-3 p-3 rounded-xl bg-surface border border-white/10">
+              <svg class="w-5 h-5 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span>30+ Independent Carriers</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+            <button onclick="openBookingModal()" class="px-8 py-4 rounded-xl border-2 border-amber-500 bg-amber-500/15 hover:bg-amber-500/30 text-white font-mono text-sm font-bold tracking-widest uppercase transition-all shadow-[0_0_30px_rgba(245,158,11,0.3)] flex items-center justify-center space-x-3 group">
+              <span>Schedule Free Consultation</span>
+              <svg class="w-4 h-4 text-amber-400 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+            <a href="tel:18889109928" class="px-8 py-4 rounded-xl border border-white/20 bg-surface/80 hover:bg-surface text-slate-200 font-mono text-sm text-center font-medium tracking-wider uppercase transition-all flex items-center justify-center space-x-2">
+              <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>Call 1-888-910-9928</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Agent Portrait Showcase Card (Rafa Framework Section 9) -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative w-full max-w-md bg-surface-raised border border-white/15 rounded-2xl p-6 shadow-2xl overflow-hidden">
             
-            setTimeout(() => {
-                outcomeIdx = (outcomeIdx + 1) % outcomes.length;
-                outcomeTarget.textContent = outcomes[outcomeIdx];
-                outcomeTarget.style.transform = 'translateY(20px)';
-                
-                setTimeout(() => {
-                    outcomeTarget.style.opacity = '1';
-                    outcomeTarget.style.transform = 'translateY(0px)';
-                }, 50);
-            }, 300);
-        }, 3600);
+            <!-- Technical Grid Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-white/10 font-mono text-xs text-slate-400">
+              <span class="text-amber-400 font-semibold">VERIFIED LICENSED AGENT</span>
+              <span>NPN #21552059</span>
+            </div>
 
-        // 3. Viewport Scroll Reveal Observer
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.12 });
+            <!-- Agent Photo Container -->
+            <div class="relative my-5 rounded-xl overflow-hidden border border-white/10 aspect-[4/5] bg-canvas">
+              <img src="Gemini_Generated_Image_th3dr2th3dr2th3d (1).png" alt="Abel Vela - Whitestone Senior Protection Specialist" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              
+              <!-- Floating Badge -->
+              <div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur-md p-3.5 rounded-xl border border-white/15 flex items-center space-x-3">
+                <div class="p-2 rounded-lg bg-amber-500/20 text-amber-400">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Abel Vela</h4>
+                  <p class="font-mono text-[11px] text-slate-300">Multi-State Licensed Specialist</p>
+                </div>
+              </div>
+            </div>
 
-        document.querySelectorAll('.reveal-node').forEach(node => {
-            revealObserver.observe(node);
-        });
+            <!-- Credentials List -->
+            <div class="space-y-2 font-mono text-xs text-slate-300 pt-1">
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-slate-400">EXPERIENCE:</span>
+                <span class="text-white font-semibold">6+ Years Specialized</span>
+              </div>
+              <div class="flex justify-between py-1 border-b border-white/5">
+                <span class="text-slate-400">CARRIER ACCESS:</span>
+                <span class="text-amber-400 font-semibold">30+ Top Insurance Cos</span>
+              </div>
+              <div class="flex justify-between py-1">
+                <span class="text-slate-400">COVERAGE STATUS:</span>
+                <span class="text-emerald-400 font-semibold">Nationwide Licensing</span>
+              </div>
+            </div>
 
-        // 4. FAQ Toggle Accordion
-        function toggleFaq(button) {
-            const content = button.nextElementSibling;
-            const icon = button.querySelector('i');
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. MEET ABEL VELA SECTION (Personal Trust Focus) -->
+    <section id="about-abel" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-canvas-soft">
+      <div class="max-w-6xl mx-auto space-y-12">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+          <span class="font-mono text-xs text-amber-400 uppercase tracking-widest">PERSONAL ADVOCACY & TRUST</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-white uppercase leading-none">“I Don't Work For The Insurance Companies. I Work For You.”</h2>
+          <p class="text-slate-300 text-lg leading-relaxed">
+            When planning final expense protection, you deserve clear answers—not sales pitches. I sit on your side of the table to find the policy that fits your family's budget and goals.
+          </p>
+        </div>
+
+        <!-- 3 Personal Guarantees Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-surface border border-white/10 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-lg">01</div>
+            <h3 class="font-display text-2xl text-white uppercase">100% Honest Guidance</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              No pushy tactics or confusing jargon. I explain every option clearly so you can make an empowered decision for your loved ones.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-surface border border-white/10 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-lg">02</div>
+            <h3 class="font-display text-2xl text-white uppercase">Tailored To Your Budget</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Whether you need $5,000 or $40,000 in coverage, we build a customized plan that stays affordable now and forever.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-surface border border-white/10 space-y-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-bold text-lg">03</div>
+            <h3 class="font-display text-2xl text-white uppercase">Lifetime Support</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              I am your dedicated agent for life. When your family ever needs assistance, they call me directly—not a distant call center.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. THE COMPLETE SYSTEM PANEL (Rafa Framework Section 8) -->
+    <section id="system" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <div class="max-w-6xl mx-auto space-y-12">
+        
+        <div class="space-y-3">
+          <span class="font-mono text-xs text-amber-400 uppercase tracking-widest">HOW ABEL SECURES YOUR POLICY</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-white uppercase leading-none">THE 30+ CARRIER COMPARISON SYSTEM</h2>
+          <p class="text-slate-300 text-lg max-w-2xl">
+            Captive agents can only offer plans from 1 company. Abel scans over 30 leading carriers in real-time to locate the exact lowest rate for your age and health profile.
+          </p>
+        </div>
+
+        <!-- Technical System Visual Container -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-surface-raised border border-white/15 technical-grid space-y-6">
+          <div class="flex items-center justify-between border-b border-white/10 pb-4 font-mono text-xs text-slate-400">
+            <span class="flex items-center space-x-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-white font-semibold">LIVE AGENT WORKFLOW</span>
+            </span>
+            <span>SYSTEM ID: WSP-ABEL-2026</span>
+          </div>
+
+          <!-- Step Progress Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             
-            if (content.classList.contains('hidden')) {
-                content.classList.remove('hidden');
-                icon.classList.remove('fa-plus');
-                icon.classList.add('fa-minus');
-                icon.classList.add('rotate-180');
-            } else {
-                content.classList.add('hidden');
-                icon.classList.remove('fa-minus');
-                icon.classList.add('fa-plus');
-                icon.classList.remove('rotate-180');
-            }
-        }
+            <div class="p-4 rounded-xl bg-canvas border border-white/10 space-y-2">
+              <span class="font-mono text-[10px] text-amber-400 uppercase">STEP 01</span>
+              <h4 class="font-bold text-white text-base">Simple 15-Min Call</h4>
+              <p class="text-slate-400 text-xs">We review your health goals and budget comfortably over the phone.</p>
+            </div>
 
-        // 5. Booking Lightbox Modal Controls
-        function openBookingModal() {
-            const modal = document.getElementById('booking-modal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+            <div class="p-4 rounded-xl bg-canvas border border-white/10 space-y-2">
+              <span class="font-mono text-[10px] text-amber-400 uppercase">STEP 02</span>
+              <h4 class="font-bold text-white text-base">Scan 30+ Carriers</h4>
+              <p class="text-slate-400 text-xs">Abel compares Mutual of Omaha, Aetna, Transamerica, and 30+ top plans.</p>
+            </div>
 
-        function closeBookingModal() {
-            const modal = document.getElementById('booking-modal');
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
+            <div class="p-4 rounded-xl bg-canvas border border-white/10 space-y-2">
+              <span class="font-mono text-[10px] text-amber-400 uppercase">STEP 03</span>
+              <h4 class="font-bold text-white text-base">Instant Approval</h4>
+              <p class="text-slate-400 text-xs">No medical exams or bloodwork required. Most plans approve on the spot.</p>
+            </div>
 
-        // Close modal when clicking dark backdrop
-        window.addEventListener('click', function(event) {
-            const modal = document.getElementById('booking-modal');
-            if (event.target === modal) {
-                closeBookingModal();
-            }
-        });
-    </script>
+            <div class="p-4 rounded-xl bg-canvas border border-amber-500/50 bg-amber-500/5 space-y-2">
+              <span class="font-mono text-[10px] text-amber-400 uppercase">STEP 04</span>
+              <h4 class="font-bold text-amber-400 text-base">Locked-In Protection</h4>
+              <p class="text-slate-300 text-xs">Your rate never increases and your coverage can never be cancelled.</p>
+            </div>
+
+          </div>
+
+          <div class="pt-2 text-center">
+            <button onclick="openBookingModal()" class="px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-black font-mono font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center space-x-2">
+              <span>Compare My Rate Options Now</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. SECTION INVERSION: LIGHT WARM PAPER (Rafa Framework Section 11.4) -->
+    <section id="comparison" class="py-20 px-4 sm:px-6 lg:px-8 bg-paper text-paper-dark">
+      <div class="max-w-6xl mx-auto space-y-12">
+        
+        <div class="max-w-3xl space-y-3">
+          <span class="font-mono text-xs font-bold text-amber-700 uppercase tracking-widest">WHY CHOOSE AN INDEPENDENT BROKER?</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-slate-900 uppercase leading-none">CAPTIVE AGENT VS. ABEL VELA</h2>
+          <p class="text-slate-700 text-lg">
+            Standard insurance agents are restricted to selling only 1 company's products—even if the price is higher. Abel works independently for you.
+          </p>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="overflow-x-auto rounded-2xl border border-slate-300 bg-white shadow-lg">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-slate-100 border-b border-slate-300 font-mono text-xs text-slate-700 uppercase">
+                <th class="p-4 sm:p-6">Feature / Benefit</th>
+                <th class="p-4 sm:p-6 text-slate-500">Captive Insurance Agent</th>
+                <th class="p-4 sm:p-6 text-amber-700 font-bold bg-amber-50">Abel Vela (Whitestone)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 text-sm sm:text-base">
+              <tr>
+                <td class="p-4 sm:p-6 font-semibold text-slate-900">Carrier Choices</td>
+                <td class="p-4 sm:p-6 text-slate-600">Only 1 Company</td>
+                <td class="p-4 sm:p-6 font-bold text-emerald-800 bg-amber-50/50">30+ Independent Carriers</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-6 font-semibold text-slate-900">Price Guarantee</td>
+                <td class="p-4 sm:p-6 text-slate-600">Take it or leave it rate</td>
+                <td class="p-4 sm:p-6 font-bold text-emerald-800 bg-amber-50/50">Lowest Available Market Price</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-6 font-semibold text-slate-900">Medical Exam Needed?</td>
+                <td class="p-4 sm:p-6 text-slate-600">Often required</td>
+                <td class="p-4 sm:p-6 font-bold text-emerald-800 bg-amber-50/50">NO Medical Exams Required</td>
+              </tr>
+              <tr>
+                <td class="p-4 sm:p-6 font-semibold text-slate-900">Rate Increase Risk</td>
+                <td class="p-4 sm:p-6 text-slate-600">Can increase with age</td>
+                <td class="p-4 sm:p-6 font-bold text-emerald-800 bg-amber-50/50">Locked For Life (Never Increases)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 7. EMBEDDED INLINE CALENDAR SECTION -->
+    <section id="schedule" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-canvas">
+      <div class="max-w-5xl mx-auto space-y-8 text-center">
+        
+        <div class="space-y-3">
+          <span class="font-mono text-xs text-amber-400 uppercase tracking-widest">DIRECT CALENDAR BOOKING</span>
+          <h2 class="font-display text-4xl sm:text-6xl text-white uppercase leading-none">Pick A Convenient Time To Talk</h2>
+          <p class="text-slate-300 text-base sm:text-lg">
+            Select a date and time below for a quick, zero-pressure 15-minute phone consultation with Abel.
+          </p>
+        </div>
+
+        <!-- Inline Calendar Frame Wrapper (Wide Desktop & Smooth Mobile Container) -->
+        <div class="w-full bg-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200/20 p-1 sm:p-4">
+          <iframe 
+            src="https://link.uigus.com/widget/bookings/family-protection-call" 
+            class="w-full min-h-[850px] sm:min-h-[800px] border-0 rounded-xl"
+            scrolling="auto" 
+            id="inline-booking-iframe"
+            title="Family Protection Call Booking Calendar Inline">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 8. FREQUENTLY ASKED QUESTIONS (Accordion) -->
+    <section id="faq" class="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-canvas-soft">
+  <!-- 10. MOBILE-OPTIMIZED & DESKTOP WIDE BOOKING MODAL -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-0 sm:p-4 md:p-6 bg-black/85 backdrop-blur-md transition-opacity">
+    <div class="relative w-full h-full sm:h-[88vh] sm:max-w-5xl flex flex-col bg-white sm:rounded-2xl shadow-2xl overflow-hidden">
+      
+      <!-- Fixed Sticky Header -->
+      <div class="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-6 py-3.5 bg-[#0f141f] border-b border-white/10 shrink-0 text-white">
+        <div class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+          <span class="font-mono text-xs sm:text-sm font-bold text-amber-400 uppercase tracking-wider">Schedule Directly with Abel Vela</span>
+        </div>
+        
+        <button onclick="closeBookingModal()" class="p-2 text-slate-300 hover:text-white rounded-lg transition-colors hover:bg-white/10" aria-label="Close modal">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Scrollable Modal Body Container (Fullscreen on Mobile, Spacious on PC) -->
+      <div class="flex-1 w-full h-full overflow-y-auto custom-scroll p-1 sm:p-4 bg-white">
+        <iframe 
+          src="https://link.uigus.com/widget/bookings/family-protection-call" 
+          class="w-full min-h-[850px] sm:min-h-[780px] border-0 rounded-xl"
+          scrolling="auto" 
+          id="modal-booking-iframe"
+          title="Family Protection Call Booking Calendar Modal">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // 1. Scroll Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height);
+      document.getElementById('scroll-progress').style.transform = `scaleX(${scrolled})`;
+    });
+
+    // 2. Rotating Outcome Words (Rafa Framework Section 7.2)
+    const phrases = ["BURIAL COSTS", "MEDICAL BILLS", "LIFETIME RATES", "PEACE OF MIND"];
+    let phraseIdx = 0;
+    const phraseEl = document.getElementById('rotating-phrase');
+
+    setInterval(() => {
+      phraseEl.style.opacity = '0';
+      phraseEl.style.transform = 'translateY(15px)';
+
+      setTimeout(() => {
+        phraseIdx = (phraseIdx + 1) % phrases.length;
+        phraseEl.innerText = phrases[phraseIdx];
+        phraseEl.style.transform = 'translateY(-15px)';
+        
+        setTimeout(() => {
+          phraseEl.style.opacity = '1';
+          phraseEl.style.transform = 'translateY(0)';
+        }, 50);
+
+      }, 300);
+    }, 3600);
+
+    // 3. Modal Controls with Body Locking (Prevents background scroll)
+    function openBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking dark backdrop
+    window.addEventListener('click', function(event) {
+      const modal = document.getElementById('booking-modal');
+      if (event.target === modal) {
+        closeBookingModal();
+      }
+    });
+  </script>
+
 </body>
 </html>
