@@ -1,16 +1,38 @@
-# React + Vite
+# Abel Vela · Whitestone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Responsive senior protection website. The public page lives in `index.html`; the React files are unused starter files. Styles are included in the page, with no external font or Tailwind CDN dependency.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm ci
+npm run dev
+```
 
-## React Compiler
+## Production
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+Deploy the generated `dist/` directory using the existing hosting setup.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Scheduling
+
+All primary “Schedule call” links point to `#schedule`. That section embeds the existing GHL booking calendar:
+
+https://link.uigus.com/widget/bookings/family-protection-call
+
+A direct link is included above the calendar as a fallback. When changing calendars, update both the iframe URL and the fallback link in `index.html`. Appointment length, availability, time zones, form fields, and confirmations are managed in GHL. The website does not publish a contact phone number or include telephone links. Phone information requested by GHL is managed separately in that service.
+
+## Accessibility and mobile behavior
+
+- Readable system fonts, 18px body text, high contrast, and 52px or larger primary actions.
+- Persistent mobile scheduling action with space reserved below the page.
+- Responsive cards and a comparison table that stacks on small screens.
+- Skip link, visible keyboard focus, descriptive iframe title, and native FAQ disclosures.
+- Reduced-motion preference respected; no rotating headlines or booking modal.
+- Optimized WebP images in `public/`; the original image files remain as source assets.
+
+The embedded calendar is a third-party interface. Its internal design and accessibility must be maintained in GHL.
